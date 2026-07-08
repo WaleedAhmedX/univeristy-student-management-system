@@ -26,6 +26,7 @@ const readline=require("readline");
 
 const{addstudent}=require("./services/studentservice.js");
 
+const{viewstudent}=require("./services/studentservice.js");
 
 const r1=readline.createInterface(
     {
@@ -60,9 +61,11 @@ if(choice==="1")
 
 
 }
-else if(choice==2)
+else if(choice==="2")
 {
     console.log("You selected View students!");
+    viewstudent();
+    
 
 }
 else if(choice==3)

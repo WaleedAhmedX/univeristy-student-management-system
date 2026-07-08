@@ -15,3 +15,18 @@ module.exports={
     addstudent
 };
 
+function viewstudent()
+{
+    console.log("\n----------------------------------");
+    console.log("view student");
+    console.log("------------------------------------")
+    console.log("The feature for viewing the students is under development!");
+
+}
+
+module.exports=
+{
+    viewstudent
+};
+
+
