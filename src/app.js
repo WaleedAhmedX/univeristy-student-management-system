@@ -22,15 +22,57 @@
 // Application Title
 //==========================================================
 
-console.log("=========================================");
-console.log(" University Student Management System");
-console.log(" Version 1.0");
-console.log("=========================================");
+const readline=require("readline");
 
+const r1=readline.createInterface(
+    {
+        input: process.stdin,
+        output: process.stdout
+    }
+);
 
-//==========================================================
-// Welcome Message
-//==========================================================
+//application title
 
-console.log("\nWelcome, Waleed!");
-console.log("Let's build something amazing together.\n");
+console.log("--------------------------------------");
+console.log("University Student Management System");
+console.log("version 1.0");
+console.log("---------------------------------------");
+
+//display menu
+
+console.log("Enter choice: ");
+console.log("1. Add students");
+console.log("2. View students");
+console.log("3. Exit\n");
+
+//ask the user for input
+r1.question("Enter your choice: ", function(choice)
+{
+    //console.log("\nYou Entered option", choice);
+
+if(choice==1)
+{
+    console.log("You selected Add students!");
+
+}
+else if(choice==2)
+{
+    console.log("You selected View students!");
+
+}
+else if(choice==3)
+{
+    console.log("You selected 'Exit'!");
+
+}
+else
+{
+    console.log("Invalid choice selected!")
+}
+
+    //closing the input interface 
+
+    r1.close();
+
+});
+
