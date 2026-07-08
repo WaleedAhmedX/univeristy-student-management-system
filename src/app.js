@@ -24,6 +24,9 @@
 
 const readline=require("readline");
 
+const{addstudent}=require("./services/studentservice.js");
+
+
 const r1=readline.createInterface(
     {
         input: process.stdin,
@@ -50,9 +53,11 @@ r1.question("Enter your choice: ", function(choice)
 {
     //console.log("\nYou Entered option", choice);
 
-if(choice==1)
+if(choice==="1")
 {
     console.log("You selected Add students!");
+    addstudent();
+
 
 }
 else if(choice==2)
