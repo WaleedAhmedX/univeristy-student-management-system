@@ -2,6 +2,9 @@
 //this file (studentService.js) contains the services related to student like adding a new student and viewing the students stored in the database
 
 const students=require("../data/students.js");
+
+const {helper}=require("../utils/helper.js"); 
+
 function addStudent(rl,callback)
 {
    rl.question("Enter student name:", function(name)
@@ -48,9 +51,9 @@ function viewStudents()
     }
     else
     {
-        console.log("\n---------------------------------------------\n");
-        console.log("               STUDENTS RECORD: ");
-        console.log("\n---------------------------------------------\n");
+        helper();
+        console.log("            Student Records: ");
+        helper();
 
         for(const student of students)
         {
@@ -61,7 +64,7 @@ function viewStudents()
             console.log(`\nStudent Semester:   ${student.semester}`);
             console.log(`\nStudent Department: ${student.department}`);
             console.log(`\nStudent University: ${student.university}`);
-            console.log("\n------------------------------------------\n");
+            helper();
 
         }
 

@@ -4,6 +4,8 @@ const readline=require("readline");
 
 const {addStudent,viewStudents}=require("./services/studentService.js");
 
+const {helper}=require("./utils/helper.js");
+
 const rl=readline.createInterface(
     {
         input: process.stdin,
@@ -12,10 +14,13 @@ const rl=readline.createInterface(
 );
 
 //application title;
-console.log("-------------------------------------");
+//console.log("-------------------------------------");
+
+helper();
 console.log("University Student Management Module!");
 console.log("Version 1.0");
-console.log("-------------------------------------");
+helper();
+
 
 //Menu Interface
 
@@ -38,6 +43,8 @@ if(choice==="1")
 
  console.log("You selected Add Student!");
  addStudent(rl,showMenu);
+ //helper();
+
 }
 
 else if(choice==="2")
@@ -52,6 +59,7 @@ else if(choice==="2")
 else if(choice==="3")
 {
     console.log("You selected Exit!");
+    helper();
 
     //closing the interface menu
     rl.close()
@@ -60,6 +68,7 @@ else if(choice==="3")
 else
 {
     console.log("Invalid choice!");
+    helper();
     showMenu();
 
 }
