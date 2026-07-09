@@ -1,86 +1,76 @@
-//==========================================================
-//
-// University Student Management System
-//
-// File:
-// app.js
-//
-// Purpose:
-// This is the main entry point of our application.
-//
-// Every program needs a starting point.
-// Just like C++ starts from main(),
-// our JavaScript application will start here.
-//
-// Author:
-// Waleed Ahmed
-//
-//==========================================================
-
-
-//==========================================================
-// Application Title
-//==========================================================
+//this file is app.js which consists of the menu of university student management system!
 
 const readline=require("readline");
 
-const{addstudent}=require("./services/studentservice.js");
+const {addStudent,viewStudents}=require("./services/studentService.js");
 
-const{viewstudent}=require("./services/studentservice.js");
-
-const r1=readline.createInterface(
+const rl=readline.createInterface(
     {
         input: process.stdin,
         output: process.stdout
     }
 );
 
-//application title
+//application title;
+console.log("-------------------------------------");
+console.log("University Student Management Module!");
+console.log("Version 1.0");
+console.log("-------------------------------------");
 
-console.log("--------------------------------------");
-console.log("University Student Management System");
-console.log("version 1.0");
-console.log("---------------------------------------");
+//Menu Interface
 
-//display menu
 
-console.log("Enter choice: ");
-console.log("1. Add students");
-console.log("2. View students");
-console.log("3. Exit\n");
-
-//ask the user for input
-r1.question("Enter your choice: ", function(choice)
+function showMenu()
 {
-    //console.log("\nYou Entered option", choice);
+
+console.log("\nEnter choice");
+console.log("1. Add student");
+console.log("2. View students");
+console.log("3. Exit");
+
+rl.question("You selected choice: ", function(choice)
+//using else-if structure to decide between different choices
+{
 
 if(choice==="1")
-{
-    console.log("You selected Add students!");
-    addstudent();
 
+{
+
+ console.log("You selected Add Student!");
+ addStudent();
+ showMenu();
 
 }
+
 else if(choice==="2")
+
 {
-    console.log("You selected View students!");
-    viewstudent();
-    
+    console.log("You selected View Students!");
+    viewStudents();
+    showMenu();
 
 }
-else if(choice==3)
-{
-    console.log("You selected 'Exit'!");
 
+else if(choice==="3")
+{
+    console.log("You selected Exit!");
+
+    //closing the interface menu
+    rl.close()
 }
+
 else
 {
-    console.log("Invalid choice selected!")
+    console.log("Invalid choice!");
+    showMenu();
+
 }
 
-    //closing the input interface 
+//closing the input interface
 
-    r1.close();
 
-});
+}
+);
+}
 
+showMenu();
