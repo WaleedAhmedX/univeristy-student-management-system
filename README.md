@@ -28,3 +28,30 @@ NUML Islamabad
 ## Current Sprint
 
 Sprint 1 - Foundation
+
+## Sprint 1 Completed ✅
+
+### Features Implemented
+
+- Console-based menu system
+- Add student records
+- View student records
+- Dynamic user input
+- In-memory data storage
+- Modular project structure
+- Utility helper functions
+- Callback-based menu navigation
+
+### Concepts Learned
+
+- JavaScript Objects
+- Arrays
+- Functions
+- Modules
+- Callbacks
+- Node.js readline
+- Separation of Concerns
+- DRY Principle
+- Refactoring
+- Git Commits
+- Git Tags
