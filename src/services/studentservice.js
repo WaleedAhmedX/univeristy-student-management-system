@@ -2,21 +2,34 @@
 //this file (studentService.js) contains the services related to student like adding a new student and viewing the students stored in the database
 
 const students=require("../data/students.js");
-function addStudent()
+function addStudent(rl,callback)
 {
-   const student=
-   {
-    id: 1,
-    name: "Waleed ahmed",
-    age: 22,
-    semester: "6th",
-    Univeristy: "NUML"
-    
-   };
+   rl.question("Enter student name:", function(name)
+{
+    rl.question("Enter the age of the student: ", function(age)
+{
+    rl.question("Enter the semester of the student: ", function(semester)
+{
+    rl.question("Enter the univeristy of the student: ", function(university)
+{
+    const student={
+        id: students.length+1,
+        name: name,
+        age: Number(age),
+        semester: semester,
+        university: university
+    };
 
-   students.push(student);
+    students.push(student);
 
-   console.log("Data has been inserted into the array Successfully!");
+    console.log("\n Student Record added successfully!");
+
+    callback();
+
+});  
+});
+});
+});
    
 }
 

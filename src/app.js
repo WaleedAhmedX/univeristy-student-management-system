@@ -37,9 +37,7 @@ if(choice==="1")
 {
 
  console.log("You selected Add Student!");
- addStudent();
- showMenu();
-
+ addStudent(rl,showMenu);
 }
 
 else if(choice==="2")
