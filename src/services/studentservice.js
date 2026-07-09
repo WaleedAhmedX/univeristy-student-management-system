@@ -9,6 +9,9 @@ function addStudent(rl,callback)
     rl.question("Enter the age of the student: ", function(age)
 {
     rl.question("Enter the semester of the student: ", function(semester)
+
+{
+    rl.question("Enter the department of the student: ", function(department)
 {
     rl.question("Enter the univeristy of the student: ", function(university)
 {
@@ -17,7 +20,8 @@ function addStudent(rl,callback)
         name: name,
         age: Number(age),
         semester: semester,
-        university: university
+        university: university,
+        department: department
     };
 
     students.push(student);
@@ -26,7 +30,9 @@ function addStudent(rl,callback)
 
     callback();
 
-});  
+}); 
+});
+
 });
 });
 });
@@ -35,12 +41,34 @@ function addStudent(rl,callback)
 
 function viewStudents()
 {
-    console.log("\n----------------------------------------");
-    console.log("View Students!");
-    console.log("-------------------------------------------");
+    if(students.length===0)
+    {
+        console.log("No Student Records found!");
+        return;
+    }
+    else
+    {
+        console.log("\n---------------------------------------------\n");
+        console.log("               STUDENTS RECORD: ");
+        console.log("\n---------------------------------------------\n");
 
-    console.log(students);
+        for(const student of students)
+        {
+            console.log(`\nStudent #${student.id}`);
+            console.log(`\nStudent ID:         ${student.id}`);
+            console.log(`\nStudent name:       ${student.name}`);
+            console.log(`\nStudent age:        ${student.age}`);
+            console.log(`\nStudent Semester:   ${student.semester}`);
+            console.log(`\nStudent Department: ${student.department}`);
+            console.log(`\nStudent University: ${student.university}`);
+            console.log("\n------------------------------------------\n");
 
+        }
+
+
+
+    }
+    
 
 }
 
